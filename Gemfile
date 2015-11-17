@@ -26,6 +26,8 @@ gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 # Using simple form with bootstrap support
 gem 'simple_form'
+#Use devise for User Authentication
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
