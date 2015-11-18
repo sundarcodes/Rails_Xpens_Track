@@ -1,0 +1,11 @@
+class CreateExpenseDetails < ActiveRecord::Migration
+  def change
+    create_table :expense_details do |t|
+      t.references :user, index: true, foreign_key: true
+      t.references :expenseEntry, index: true, foreign_key: true
+      t.decimal :amt
+
+      t.timestamps null: false
+    end
+  end
+end

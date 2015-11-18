@@ -16,4 +16,13 @@ protected
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end
+
+  def getCurrentUserFriendsList
+    friends_list=[]
+    current_user.friends.each do |friend|
+      user=User.find(friend.friends_with)
+      friends_list.push(user)
+    end
+    return friends_list
+  end
 end

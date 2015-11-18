@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
            :case_sensitive => false
          }
   has_many :friends, dependent: :destroy
-
+  has_many :expense_entries, dependent: :destroy
+  has_many :expense_details, dependent: :destroy
   validate :validate_username
 
   def validate_username

@@ -9,12 +9,11 @@
           <% end %>
           </h3>
         </div>
-        <div class="panel-body">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Friend 1
-        </div>
-        <div class="panel-body">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Friend 2
-        </div>
+        <% @friends_list.each do |friend|  %>
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%=friend.username %>
+          </div>
+        <% end  %>
       </div>
       <div class="panel panel-primary">
         <div class="panel-heading">

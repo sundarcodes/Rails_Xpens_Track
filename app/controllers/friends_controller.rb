@@ -28,11 +28,7 @@ class FriendsController < ApplicationController
   end
 
   def list
-    @friends_list=[]
-    current_user.friends.each do |friend|
-      user=User.find(friend.friends_with)
-      @friends_list.push(user)
-    end
+    @friends_list=getCurrentUserFriendsList
 
   end
 
