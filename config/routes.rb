@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/land'
+
   get 'welcome/index'
 
   devise_for :users
