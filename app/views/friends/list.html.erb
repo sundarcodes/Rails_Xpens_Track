@@ -1,0 +1,10 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Friends List</h3>
+  </div>
+  <% @friends_list.each do |friend| %>
+  <div class="panel-body">
+    <%= friend.username %>
+  </div>
+  <% end  %>
+</div>

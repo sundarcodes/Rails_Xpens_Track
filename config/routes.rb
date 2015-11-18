@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'friends/add'
+
+  get 'friends/delete'
+
+  post 'friends/search'
+  post 'friends/addToFriendsList'
+
+  get 'friends/list'
+
+  get 'friends/inviteFriend'
   get 'home/land'
 
   get 'welcome/index'

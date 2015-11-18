@@ -3,7 +3,11 @@
     <section class="col-sm-3">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Buddies List <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span> </h3>
+          <h3 class="panel-title">Buddies List
+          <%= link_to friends_add_path do %>
+            <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
+          <% end %>
+          </h3>
         </div>
         <div class="panel-body">
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Friend 1
@@ -21,6 +25,17 @@
         </div>
         <div class="panel-body">
           <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Group 2
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Invite Friends <span class="glyphicon glyphicon-link pull-right" aria-hidden="true"></span> </h3>
+        </div>
+        <div class="panel-body">
+          <%= simple_form_for @user_to_be_invited ,:url => friends_inviteFriend_path, :method => :post do |f| %>
+            <%= f.input :email, label: false, placeholder: 'Email here'%>
+            <%= f.submit 'Send Invite', class: "btn btn-primary btn-block"  %>
+          <% end %>
         </div>
       </div>
     </section>

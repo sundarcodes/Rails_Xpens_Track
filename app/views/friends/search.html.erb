@@ -1,0 +1,32 @@
+<div class="container" id="friends-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-class text-center">
+        <%= simple_form_for @user_to_be_searched ,:url => friends_search_path, :method => :post do |f| %>
+          <%= f.input :login, label: false, placeholder: 'Search by email or username'%>
+          <%= f.submit 'Search', class: "btn btn-primary btn-lg"  %>
+        <% end %>
+      </div>
+      <hr/>
+      <% if @user_obj.nil?  %>
+      <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&close;</button>
+        <strong>Oops!</strong>
+        <a href="#" class="alert-link"> <%= @user_to_be_searched.login %> is not in our records </a>
+      </div>
+      <% else  %>
+        <div class="col-sm-6">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <%= simple_form_for @user_obj ,:url => friends_addToFriendsList_path, :method => :post, html: { class: 'form-horizontal' },
+      wrapper: :horizontal_form do |f| %>
+                <%= f.input :username, label: false %>
+                <%= f.submit 'Add to Buddies', class: "btn btn-primary"  %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% end  %>
+    </div>
+  </div>
+</div>
